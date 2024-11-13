@@ -1,0 +1,26 @@
+﻿@model IEnumerable<CRUD_filmy_mateusz_zemsta.Models.Film>
+
+<h1>Lista Filmów</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nazwa</th>
+            <th>Akcje</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var film in Model)
+        {
+            <tr>
+                <td>@film.Name</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@film.Id">Szczegóły</a> |
+                    <a asp-action="Edit" asp-route-id="@film.Id">Edytuj</a> |
+                    <a asp-action="Delete" asp-route-id="@film.Id">Usuń</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" class="btn btn-primary">Dodaj nowy film</a>

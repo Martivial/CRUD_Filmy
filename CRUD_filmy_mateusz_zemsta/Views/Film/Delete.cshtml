@@ -1,0 +1,20 @@
+﻿@model CRUD_filmy_mateusz_zemsta.Models.Film
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<h1>Usuń Film</h1>
+<p>Czy na pewno chcesz usunąć ten film?</p>
+
+<p><strong>Nazwa:</strong> @Model.Name</p>
+<p><strong>Opis:</strong> @Model.Description</p>
+<p><strong>Cena:</strong> @Model.Price</p>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Usuń</button>
+    <a asp-action="Index" class="btn btn-secondary">Anuluj</a>
+</form>
+
